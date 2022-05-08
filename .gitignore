@@ -361,3 +361,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+asset-v1_EPAM+CSB+ext1+type@asset+block@Computer_Science_Basics_-_full.pdf
+DevTestOps-CI_with_Jenkins.pdf
+DevTestOps-Version_Control_with_Git.pdf
+Extreme Programming Kent Beck.pdf
+new 1.cs
+progit.pdf
