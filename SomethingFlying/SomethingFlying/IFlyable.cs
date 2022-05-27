@@ -6,25 +6,28 @@ using System.Threading.Tasks;
 
 namespace SomethingFlying
 {
-    /*
-     * интерфейс отвечает за то, какие методы быудут у классов Bird, Plane, Drone 
-     */
+    /// <summary>
+    /// Interface provides flying objects behaviour
+    /// </summary>
     interface IFlyable 
     {
+        /// <summary>
+        /// show current position of flying object
+        /// </summary>
+        void GetCurrentPoint();
+
+        /// <summary>
+        /// change position of flying object without flight time calculation
+        /// </summary>
+        void FlyTo(); //TODO desigh the input check
+
+        /// <summary>
+        /// change position of flying object with flight time calculation
+        /// </summary>
+        /// <param name="coordinate"> Get current coordinates of object </param>
+        /// <returns>  Return flying time from current position to new position </returns>
+        double GetFlyTime(Coordinate coordinate); 
         
-        //void FlyTo(Coordinate coordinate);
-        
-
-        void CurrentPoint(); // show current position of flying object
-
-        void FlyTo(); // change position of flying object without flight time calculation
-
-        double GetFlyTime(Coordinate coordinate); // change position of flying object with flight time calculation
-
-
-        //Limitations: max range, max height, 
-
-
-
+ 
     }
 }

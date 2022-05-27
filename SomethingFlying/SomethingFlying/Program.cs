@@ -8,42 +8,46 @@ namespace SomethingFlying
 {
     class Program
     {
-        
+        /// <summary>
+        /// Create flying objects, change their position and calculate flying time to new
+        /// position
+        /// </summary>
         static void Main()
         {
             // Create bird
             Bird oriole = new Bird();
             Console.WriteLine("Oriole in point ");
-            oriole.CurrentPoint(); // start position
+            oriole.GetCurrentPoint(); // start position
 
             oriole.FlyTo();
-            oriole.CurrentPoint(); // just flying
+            oriole.GetCurrentPoint(); // just flying
 
-            Console.WriteLine($"Oriole fly to a new point in {oriole.GetFlyTime(oriole.CurrentPosition)} hours"); //lying with flight time calculate
-            oriole.CurrentPoint();
+            Console.WriteLine($"Oriole fly to a new point in {oriole.GetFlyTime(oriole.CurrentPosition)} hours"); 
+            //lying with flight time calculate
+            oriole.GetCurrentPoint();
 
             //Create plane
             Plane Airbus = new Plane();
             Console.WriteLine("Airbus in point ");
-            Airbus.CurrentPoint();
+            Airbus.GetCurrentPoint();
 
             Airbus.FlyTo();
-            Airbus.CurrentPoint();
+            Airbus.GetCurrentPoint();
 
             Console.WriteLine($"Airbus fly to a new point in {Airbus.GetFlyTime(Airbus.CurrentPosition)} hours"); //lying with flight time calculate
-            Airbus.CurrentPoint();
+            Airbus.GetCurrentPoint();
 
             //Create drone
 
             Drone drone = new Drone();
             Console.WriteLine("Drone in point ");
-            drone.CurrentPoint();
+            drone.GetCurrentPoint();
 
-            //drone.FlyTo();
-            //drone.CurrentPoint();
+            drone.FlyTo();
+            drone.GetCurrentPoint();
 
             Console.WriteLine($"Drone fly to a new point in {drone.GetFlyTime(drone.CurrentPosition)} hours"); //lying with flight time calculate
-            drone.CurrentPoint();
+            drone.GetCurrentPoint();
 
         }
     }
