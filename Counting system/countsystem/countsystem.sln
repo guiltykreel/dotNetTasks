@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32228.343
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "countsystem", "countsystem\countsystem.csproj", "{6C5CCC8D-B1F0-49A1-95F3-2FEA3A503C88}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{524C6ECB-23A0-454C-8866-7BC35C3682A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "countsystem", "countsystem\countsystem.csproj", "{6C5CCC8D-B1F0-49A1-95F3-2FEA3A503C88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{6C5CCC8D-B1F0-49A1-95F3-2FEA3A503C88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C5CCC8D-B1F0-49A1-95F3-2FEA3A503C88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C5CCC8D-B1F0-49A1-95F3-2FEA3A503C88}.Release|Any CPU.Build.0 = Release|Any CPU
-		{524C6ECB-23A0-454C-8866-7BC35C3682A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{524C6ECB-23A0-454C-8866-7BC35C3682A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{524C6ECB-23A0-454C-8866-7BC35C3682A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{524C6ECB-23A0-454C-8866-7BC35C3682A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,88 +4,75 @@ namespace countsystem
 {
     class Program
     {
-       
+       /// <summary>
+       /// Conversion of integer numbers from decimal to another system of calculation (from 2 to 20)
+       /// </summary>
         static void Main()
         {
-           int decnum;
-            int basenum;
-            string decn;
-            
 
-           
+            int DecimalNumber; //Convertible number
+            int BaseNumber; // Base of calculation system 
 
             Console.WriteLine("Enter a number in decimal count system: ");
-            decn = Console.ReadLine();
-            decnum = Convert.ToInt32 (decn);  
+
+            DecimalNumber = Convert.ToInt32 (Console.ReadLine());  
             Console.WriteLine("Enter a base of count system: ");
-            decn = Console.ReadLine();
-            basenum  = Convert.ToInt32(decn);  
-            Toanothercountsystem(decnum, basenum);
-            
+
+            BaseNumber  = Convert.ToInt32(Console.ReadLine());  
+            Console.WriteLine($"Result = {ToAnotherCountSystem(DecimalNumber, BaseNumber)}");
         }
 
-        static void Toanothercountsystem(int d, int b) 
+        static string ToAnotherCountSystem(int d, int b) 
         {
-            int i = 1;
-            int tmp=1;
-            string res="";
             
-            
-            while ( tmp >= 1) { //вычисляем количество знаков в числе
-                tmp = d;
-                tmp = tmp / Convert.ToInt32((Math.Pow(10,i)));
+            int tmp=d;
+            string Result="";
 
-                i++;
-                
-            }
-            i=i-2;
-            
-           // Console.WriteLine($"d = {d}");
-           // Console.WriteLine($"i = {i}");
-            tmp = d;
-            while (tmp > 0) // переводим в b систему исчисления
+           
+            while (tmp > 0) // Convert decimal number into b base calculate system
             {
-                switch (tmp % b)
+                //reverse of the recording order 
+                switch (tmp % b) // if the reminder is 10 or more write symbols
                 {
                     case 10:
-                        res = res.Insert(0, "A");
+                        Result = Result.Insert(0, "A");
                         break;
                     case 11:
-                        res = res.Insert(0, "B");
+                        Result = Result.Insert(0, "B");
                         break;
                     case 12:
-                        res = res.Insert(0, "C");
+                        Result = Result.Insert(0, "C");
                         break;
                     case 13:
-                        res = res.Insert(0, "D");
+                        Result = Result.Insert(0, "D");
                         break;
                     case 14:
-                        res = res.Insert(0, "E");
+                        Result = Result.Insert(0, "E");
                         break;
                     case 15:
-                        res = res.Insert(0, "F");
+                        Result = Result.Insert(0, "F");
                         break;
                     case 16:
-                        res = res.Insert(0, "G");
+                        Result = Result.Insert(0, "G");
                         break;
                     case 17:
-                        res = res.Insert(0, "H");
+                        Result = Result.Insert(0, "H");
                         break;
                     case 18:
-                        res = res.Insert(0, "I");
+                        Result = Result.Insert(0, "I");
                         break;
                     case 19:
-                        res = res.Insert(0, "J");
+                        Result = Result.Insert(0, "J");
                         break;
                     default:
-                        res = res.Insert(0, Convert.ToString(tmp % b));
+                        Result = Result.Insert(0, Convert.ToString(tmp % b));
                         break;
+                }
+                tmp = tmp / b;
             }
-                tmp = tmp/ b;
-                Console.WriteLine($"res = {res}");
-            }
-            
+            return Result;
 
         }
+        
     }
 }
