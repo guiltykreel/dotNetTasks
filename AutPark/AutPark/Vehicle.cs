@@ -9,22 +9,22 @@ namespace AutPark
     public class Vehicle
     {
         // Поля класса Vehicle являются в свою очередь классами 
-        private Engine Engine ;
-        private Chassis Chassis;
-        private Transmission Transmission;
-        private string cartype;
-        public Vehicle(string cartype) // Конструктор принимает "тип" ТС и создает объекты классов "Двигатель", "Шасси", "Трансмиссия"
+        public Engine Engine ;
+        public Chassis Chassis;
+        public Transmission Transmission;
+        //private string cartype;
+        public Vehicle(object CarType) // Конструктор принимает "тип" ТС и создает объекты классов "Двигатель", "Шасси", "Трансмиссия"
         {
-            Engine = new Engine(cartype);
-            Chassis = new Chassis(cartype);
-            Transmission = new Transmission(cartype);
-            this.cartype = cartype;
+            Engine = new Engine(CarType);
+            Chassis = new Chassis(CarType);
+            Transmission = new Transmission(CarType);
+            
         }
 
 
-        public void description()
+        public void Description()
         {
-            Console.WriteLine($"Car type: {cartype}");
+            //Console.WriteLine($"Car type: {Car}");
             Console.WriteLine("");
             Engine.EngineDescription();
             Console.WriteLine("");

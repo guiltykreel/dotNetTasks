@@ -45,7 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bus.cs" />
+    <Compile Include="Cargo.cs" />
     <Compile Include="Chassis.cs" />
+    <Compile Include="Passenger.cs" />
+    <Compile Include="Scooter.cs" />
     <Compile Include="Vehicle.cs" />
     <Compile Include="Transmission.cs" />
     <Compile Include="Engine.cs" />

@@ -8,35 +8,36 @@ namespace AutPark
 {
     public class Engine
     {
-        private double Power;
-        private double Volume;
-        private string Type;
-        private Guid SerialNumber;
+        public double Power;
+        public double Volume;
+        public string Type;
+        public Guid SerialNumber;
 
-        public Engine(string cartype)
+        public Engine(object CarType)
         {
-            switch (cartype) {
-                case "passenger":
+           
+            switch (CarType) {
+                case "Passenger":
                 Power = 250;
                 Volume = 2;
-                Type = "Electicity";
+                Type = "injector";
                 SerialNumber = Guid.NewGuid();
                     break;
-                case "cargo":
+                case "Cargo":
                     Power = 750;
-                    Volume = 25;
-                    Type = "Gasoline";
-                    SerialNumber = Guid.NewGuid();
-                    break;
-                case "bus":
-                    Power = 500;
                     Volume = 15;
-                    Type = "Gasoline";
+                    Type = "Diesel";
                     SerialNumber = Guid.NewGuid();
                     break;
-                case "scooter":
+                case "Bus":
+                    Power = 500;
+                    Volume = 6;
+                    Type = "Hybrid";
+                    SerialNumber = Guid.NewGuid();
+                    break;
+                case "Scooter":
                     Power = 50;
-                    Volume = 1.5;
+                    Volume = 0.6;
                     Type = "Corn";
                     SerialNumber = Guid.NewGuid();
                     break;

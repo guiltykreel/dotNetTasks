@@ -8,29 +8,29 @@ namespace AutPark
 {
     public class Transmission
     {
-        private string Type;
-        private int GearNum;
-        private string Manufacturer;
-        public Transmission(string cartype)
+        public string Type;
+        public int GearNum;
+        public string Manufacturer;
+        public Transmission(object CarType)
         {
-            switch (cartype)
+            switch (CarType)
             {
-                case "passenger":
+                case "Passenger":
                     Type = "Automatic";
                     GearNum = 5;
                     Manufacturer = "Porshce";
                     break;
-                case "cargo":
+                case "Cargo":
                     Type = "Manual";
                     GearNum = 7;
                     Manufacturer = "MAN";
                     break;
-                case "bus":
+                case "Bus":
                     Type = "Manual";
                     GearNum = 6;
                     Manufacturer = "MAZ";
                     break;
-                case "scooter":
+                case "Scooter":
                     Type = "Automatic";
                     GearNum = 4;
                     Manufacturer = "Harley Davidson";

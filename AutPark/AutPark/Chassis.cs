@@ -8,30 +8,30 @@ namespace AutPark
 {
     public class Chassis
     {
-        private int WheelAmount;
-        private Guid Number;
-        private double MaxStress;
+        public int WheelAmount;
+        public Guid Number;
+        public double MaxStress;
 
-        public Chassis(string cartype)
+        public Chassis(object CarType)
         {
-            switch (cartype)
+            switch (CarType)
             {
-                case "passenger":
+                case "Passenger":
                     WheelAmount = 4;
                     Number = Guid.NewGuid();
                     MaxStress = 5000;
                     break;
-                case "cargo":
+                case "Cargo":
                     WheelAmount = 4;
                     Number = Guid.NewGuid();
                     MaxStress = 50000;
                     break;
-                case "bus":
+                case "Bus":
                     WheelAmount = 4;
                     Number = Guid.NewGuid();
                     MaxStress = 30000;
                     break;
-                case "scooter":
+                case "Scooter":
                     WheelAmount = 2;
                     Number = Guid.NewGuid();
                     MaxStress = 700;
