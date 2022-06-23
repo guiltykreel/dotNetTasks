@@ -14,7 +14,7 @@ namespace AutPark
 
         public Chassis(object CarType)
         {
-            switch (CarType)
+            switch (CarType.ToString())
             {
                 case "Passenger":
                     WheelAmount = 4;

@@ -24,7 +24,7 @@ namespace AutPark
 
         public void Description()
         {
-            //Console.WriteLine($"Car type: {Car}");
+            
             Console.WriteLine("");
             Engine.EngineDescription();
             Console.WriteLine("");

@@ -16,7 +16,8 @@ namespace AutPark
         public Engine(object CarType)
         {
            
-            switch (CarType) {
+            switch (CarType.ToString()) 
+            {
                 case "Passenger":
                 Power = 250;
                 Volume = 2;

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace AutPark
 {
-    class Passenger : Vehicle
+    internal class WithExeptions
     {
-        static  string CarType = "Passenger";
-        public Passenger() : base(CarType)
-        {
 
+        static void Main()
+        { 
+        
         }
     }
 }

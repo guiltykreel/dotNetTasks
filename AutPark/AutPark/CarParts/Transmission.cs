@@ -13,7 +13,7 @@ namespace AutPark
         public string Manufacturer;
         public Transmission(object CarType)
         {
-            switch (CarType)
+            switch (CarType.ToString())
             {
                 case "Passenger":
                     Type = "Automatic";

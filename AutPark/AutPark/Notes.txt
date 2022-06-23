@@ -1,0 +1,26 @@
+﻿XDocument xDocument = XDocument.Load("D:/Projects/GIthub/dotNetTasks/AutPark/AutPark/CarModelList.xml");
+            XElement CarTitle = xDocument.Element("CarModelList");
+            foreach  (XElement Title in CarTitle.Elements("Model"))
+            {
+                XAttribute TitleAttribute = Title.Attribute("title");
+                Console.WriteLine($"Title: {TitleAttribute.Value.ToString()}");
+            }
+
+
+
+
+            XDocument CarModelList = XDocument.Load("D:/Projects/GIthub/dotNetTasks/AutPark/AutPark/CarModelList.xml");
+            XElement CarTitle = CarModelList.Element("CarModelList");
+            foreach  (XElement Title in CarTitle.Elements("Model"))
+            {
+                XAttribute TitleAttribute = Title.Attribute("title");
+                    if (TitleAttribute.Value == temp)
+                    {
+                        CarModel = TitleAttribute.Value;
+                        Console.WriteLine(TitleAttribute.Value,CarModel);
+                    }
+                    else
+                    {
+                        throw new Exception("This model is out of list");
+                    }
+            } 
