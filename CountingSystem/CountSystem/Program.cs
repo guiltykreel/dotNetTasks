@@ -22,7 +22,7 @@ namespace CountSystem
             Console.WriteLine($"Result = {ToAnotherCountSystem(DecimalNumber, BaseNumber)}");
         }
 
-        public string ToAnotherCountSystem(int Decimalnumber, int CountSystemBase) 
+        static string ToAnotherCountSystem(int Decimalnumber, int CountSystemBase) 
         {
             
             int TemporaryNumber=Decimalnumber;
