@@ -4,31 +4,28 @@ namespace CountSystem
 {
     class Program
     {
-       /// <summary>
-       /// Conversion of integer numbers from decimal to another system of calculation (from 2 to 20)
-       /// </summary>
+        /// <summary>
+        /// Conversion of integer numbers from decimal to another system of calculation (from 2 to 20)
+        /// </summary>
         static void Main()
         {
-
             int DecimalNumber; //Convertible number
             int BaseNumber; // Base of calculation system 
 
             Console.WriteLine("Enter a number in decimal count system: ");
 
-            DecimalNumber = Convert.ToInt32 (Console.ReadLine());  
+            DecimalNumber = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter a base of count system: ");
 
-            BaseNumber  = Convert.ToInt32(Console.ReadLine());  
+            BaseNumber = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"Result = {ToAnotherCountSystem(DecimalNumber, BaseNumber)}");
         }
 
-        public string ToAnotherCountSystem(int Decimalnumber, int CountSystemBase) 
+        static string ToAnotherCountSystem(int Decimalnumber, int CountSystemBase)
         {
-            
-            int TemporaryNumber=Decimalnumber;
-            string Result="";
+            int TemporaryNumber = Decimalnumber;
+            string Result = "";
 
-           
             while (TemporaryNumber > 0) // Convert decimal number into b base calculate system
             {
                 //reverse of the recording order 
@@ -71,8 +68,6 @@ namespace CountSystem
                 TemporaryNumber = TemporaryNumber / CountSystemBase;
             }
             return Result;
-
         }
-        
     }
 }
