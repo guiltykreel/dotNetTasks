@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SomethingFlying</name>
+    </assembly>
+    <members>
+        <member name="T:SomethingFlying.Bird">
+            <summary>
+            Class that creatse objects of the bird type  
+            </summary>
+        </member>
+        <member name="P:SomethingFlying.Bird.CurrentPosition">
+            <summary>
+            Property that defines the coordinates of object 
+            </summary>
+        </member>
+        <member name="M:SomethingFlying.Bird.GetCurrentPoint">
+            <summary>
+            Method that write in console current coordinates of object
+            </summary>
+        </member>
+        <member name="M:SomethingFlying.Bird.FlyTo">
+            <summary>
+            Set new CurrentPosition (Coordinate) of object
+            </summary>
+        </member>
+        <member name="M:SomethingFlying.Bird.GetFlyTime(SomethingFlying.Coordinate)">
+            <summary>
+            Method set new position for object and calculate flying time 
+            </summary>
+            <param name="coordinate"> Get current coordinates of object </param>
+            <returns> Return flying time from current position to new position  </returns>
+        </member>
+        <member name="M:SomethingFlying.Bird.Limitations(System.UInt32,System.UInt32,System.UInt32)">
+             <summary>
+             Method defines some limitations for bird type objects 
+             </summary>
+            <param name = "x" > Get new X coordinate</param>
+            <param name = "y" > Get new Y coordinate</param>
+             <param name = "z" > Get new Z coordinate</param>
+        </member>
+        <member name="T:SomethingFlying.Drone">
+            <summary>
+            Class that creatse objects of the drone type  
+            </summary>
+        </member>
+        <member name="P:SomethingFlying.Drone.CurrentPosition">
+            <summary>
+            Property that defines the coordinates of object 
+            </summary>
+        </member>
+        <member name="M:SomethingFlying.Drone.GetCurrentPoint">
+            <summary>
+            Method that write in console current coordinates of object
+            </summary>
+        </member>
+        <member name="M:SomethingFlying.Drone.FlyTo">
+            <summary>
+            Set new CurrentPosition (Coordinate) of object
+            </summary>
+        </member>
+        <member name="M:SomethingFlying.Drone.GetFlyTime(SomethingFlying.Coordinate)">
+            <summary>
+            Method set new position for object and calculate flying time 
+            </summary>
+            <param name="coordinate"> Get current coordinates of object </param>
+            <returns> Return flying time from current position to new position  </returns>
+        </member>
+        <member name="M:SomethingFlying.Drone.Limitations(System.UInt32,System.UInt32,System.UInt32)">
+             <summary>
+             Method defines some limitations for bird type objects 
+             </summary>
+            <param name = "x" > Get new X coordinate</param>
+            <param name = "y" > Get new Y coordinate</param>
+             <param name = "z" > Get new Z coordinate</param>
+        </member>
+        <member name="T:SomethingFlying.Plane">
+            <summary>
+            Class that creatse objects of the plane type  
+            </summary>
+        </member>
+        <member name="P:SomethingFlying.Plane.CurrentPosition">
+            <summary>
+            Property that defines the coordinates of object 
+            </summary>
+        </member>
+        <member name="M:SomethingFlying.Plane.GetCurrentPoint">
+            <summary>
+            Method that write in console current coordinates of object
+            </summary>
+        </member>
+        <member name="M:SomethingFlying.Plane.FlyTo">
+            <summary>
+            Set new CurrentPosition (Coordinate) of object
+            </summary>
+        </member>
+        <member name="M:SomethingFlying.Plane.GetFlyTime(SomethingFlying.Coordinate)">
+            <summary>
+            Method set new position for object and calculate flying time 
+            </summary>
+            <param name="coordinate"> Get current coordinates of object </param>
+            <returns> Return flying time from current position to new position  </returns>
+        </member>
+        <member name="M:SomethingFlying.Plane.Limitations(System.UInt32,System.UInt32,System.UInt32)">
+             <summary>
+             Method defines some limitations for bird type objects 
+             </summary>
+            <param name = "x" > Get new X coordinate</param>
+            <param name = "y" > Get new Y coordinate</param>
+             <param name = "z" > Get new Z coordinate</param>
+        </member>
+        <member name="T:SomethingFlying.Coordinate">
+            <summary>
+            Coordinate structure set and get the position of flying object 
+            </summary>
+        </member>
+        <member name="M:SomethingFlying.Coordinate.#ctor(System.UInt32,System.UInt32,System.UInt32)">
+            <summary>
+            Create object with coordinate data type
+            </summary>
+            <param name="x"> Set X coordinate </param>
+            <param name="y"> Set y coordinate </param>
+            <param name="z"> Sez Z coordinate </param>
+        </member>
+        <member name="P:SomethingFlying.Coordinate.X">
+            <summary>
+            Set and get X coordinate
+            </summary>
+        </member>
+        <member name="P:SomethingFlying.Coordinate.Y">
+            <summary>
+            Set and get Y coordinate
+            </summary>    
+        </member>
+        <member name="P:SomethingFlying.Coordinate.Z">
+            <summary>
+            Set and get Z coordinate
+            </summary> 
+        </member>
+        <member name="T:SomethingFlying.IFlyable">
+            <summary>
+            Interface provides flying objects behaviour
+            </summary>
+        </member>
+        <member name="M:SomethingFlying.IFlyable.GetCurrentPoint">
+            <summary>
+            show current position of flying object
+            </summary>
+        </member>
+        <member name="M:SomethingFlying.IFlyable.FlyTo">
+            <summary>
+            change position of flying object without flight time calculation
+            </summary>
+        </member>
+        <member name="M:SomethingFlying.IFlyable.GetFlyTime(SomethingFlying.Coordinate)">
+            <summary>
+            change position of flying object with flight time calculation
+            </summary>
+            <param name="coordinate"> Get current coordinates of object </param>
+            <returns>  Return flying time from current position to new position </returns>
+        </member>
+        <member name="T:SomethingFlying.Program">
+            <summary>
+            dotNetTasks
+            </summary>
+        </member>
+        <member name="M:SomethingFlying.Program.Main">
+            <summary>
+            Create flying objects, change their position and calculate flying time to new
+            position
+            </summary>
+        </member>
+    </members>
+</doc>
