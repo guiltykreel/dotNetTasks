@@ -45,14 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bus.cs" />
-    <Compile Include="Cargo.cs" />
-    <Compile Include="Chassis.cs" />
-    <Compile Include="Passenger.cs" />
-    <Compile Include="Scooter.cs" />
+    <Compile Include="Vechicles\Bus.cs" />
+    <Compile Include="Vechicles\Cargo.cs" />
+    <Compile Include="VechicleParts\Chassis.cs" />
+    <Compile Include="Vechicles\Passenger.cs" />
+    <Compile Include="Vechicles\Scooter.cs" />
     <Compile Include="Vehicle.cs" />
-    <Compile Include="Transmission.cs" />
-    <Compile Include="Engine.cs" />
+    <Compile Include="VechicleParts\Transmission.cs" />
+    <Compile Include="VechicleParts\Engine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

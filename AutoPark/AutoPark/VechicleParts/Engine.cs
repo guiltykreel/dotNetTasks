@@ -4,14 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutPark
+namespace AutoPark
 {
+    /// <summary>
+    /// Generate engine for different types of vechicles
+    /// </summary>
     public class Engine
     {
         public double Power;
         public double Volume;
         public string Type;
-        public Guid SerialNumber;
+        public Guid SerialNumber; // generate randomly Guid number for part
 
         public Engine(object CarType)
         {
@@ -43,7 +46,7 @@ namespace AutPark
                     break;
             }
         }
-        public void EngineDescription()
+        public void EngineDescription() //Write description of the part in coscole
         {
             Console.WriteLine($"Engine Power = {Power}");
             Console.WriteLine($"Engine Volume = {Volume}");

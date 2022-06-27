@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutPark
+namespace AutoPark
 {
+    /// <summary>
+    /// Generate chassis for different types of vechicles 
+    /// </summary>
     public class Chassis
     {
         public int WheelAmount;
-        public Guid Number;
+        public Guid Number; // generate randomly Guid number for part
         public double MaxStress;
 
         public Chassis(object CarType)
@@ -27,7 +30,7 @@ namespace AutPark
                     MaxStress = 50000;
                     break;
                 case "Bus":
-                    WheelAmount = 4;
+                    WheelAmount = 8;
                     Number = Guid.NewGuid();
                     MaxStress = 30000;
                     break;
@@ -39,7 +42,7 @@ namespace AutPark
             }
         }
 
-        public void ChassisDescription()
+        public void ChassisDescription() //Write description of the part in coscole
         {
             Console.WriteLine($"Wheel amount: {WheelAmount}");
             Console.WriteLine($"Chassis number: {Number}");

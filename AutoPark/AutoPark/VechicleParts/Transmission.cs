@@ -4,13 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutPark
+namespace AutoPark
 {
+    /// <summary>
+    /// Generate transmission for different types of vechicles
+    /// </summary>
     public class Transmission
     {
         public string Type;
         public int GearNum;
         public string Manufacturer;
+
         public Transmission(object CarType)
         {
             switch (CarType)
@@ -38,7 +42,7 @@ namespace AutPark
             }
         }
 
-        public void TransmissionDescription()
+        public void TransmissionDescription() //Write description of the part in coscole
         {
             Console.WriteLine($"Transmission type: {Type}");
             Console.WriteLine($"Gear number: {GearNum}");
