@@ -9,27 +9,27 @@ namespace CountSystem
         /// </summary>
         static void Main()
         {
-            int decimalNumber; //Convertible number
-            int baseNumber; // Base of calculation system 
+            int decimalnumber; //Convertible number
+            int basenumber; // Base of calculation system 
 
             Console.WriteLine("Enter a number in decimal count system: ");
 
-            decimalNumber = Convert.ToInt32(Console.ReadLine());
+            decimalnumber = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter a base of count system: ");
 
-            baseNumber = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"Result = {ToAnotherCountSystem(decimalNumber, baseNumber)}");
+            basenumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Result = {ToAnotherCountSystem(decimalnumber, basenumber)}");
         }
 
-        private static string ToAnotherCountSystem(int convertibleDecimalNumber, int countSystemBase)
+        static string ToAnotherCountSystem(int convertibledecimalnumber, int countsystembase)
         {
-            int temporaryNumber = convertibleDecimalNumber;
+            int temporarynumber = convertibledecimalnumber;
             string result = "";
 
-            while (temporaryNumber > 0) // Convert decimal number into b base calculate system
+            while (temporarynumber > 0) // Convert decimal number into b base calculate system
             {
                 //reverse of the recording order 
-                switch (temporaryNumber % countSystemBase) // if the reminder is 10 or more write symbols
+                switch (temporarynumber % countsystembase) // if the reminder is 10 or more write symbols
                 {
                     case 10:
                         result = result.Insert(0, "A");
@@ -62,10 +62,10 @@ namespace CountSystem
                         result = result.Insert(0, "J");
                         break;
                     default:
-                        result = result.Insert(0, Convert.ToString(temporaryNumber % countSystemBase));
+                        result = result.Insert(0, Convert.ToString(temporarynumber % countsystembase));
                         break;
                 }
-                temporaryNumber = temporaryNumber / countSystemBase;
+                temporarynumber = temporarynumber / countsystembase;
             }
             return result;
         }
