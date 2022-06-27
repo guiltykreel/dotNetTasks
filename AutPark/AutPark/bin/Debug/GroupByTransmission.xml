@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <Group TransmissionType="Automatic">
+    <Vechicle Type="AutPark.Passenger" />
+    <Vechicle Type="AutPark.Scooter" />
+    <Transmission>
+      <GearNum>5</GearNum>
+      <Manufacturer>Porshce</Manufacturer>
+    </Transmission>
+    <Transmission>
+      <GearNum>4</GearNum>
+      <Manufacturer>Harley Davidson</Manufacturer>
+    </Transmission>
+    <Engine>
+      <Type>injector</Type>
+      <Volume>2</Volume>
+      <Power>250</Power>
+      <SerialNumber>616d211a-3367-49c1-92cd-f9afa596eb9d</SerialNumber>
+    </Engine>
+    <Engine>
+      <Type>Corn</Type>
+      <Volume>0.6</Volume>
+      <Power>50</Power>
+      <SerialNumber>443b1db2-234c-474f-ae14-121548d63f9e</SerialNumber>
+    </Engine>
+    <Chassis>
+      <WheelAmount>4</WheelAmount>
+      <MaxStress>5000</MaxStress>
+      <Number>bce8e7b7-7a13-4db0-9f88-fe390c971e34</Number>
+    </Chassis>
+    <Chassis>
+      <WheelAmount>2</WheelAmount>
+      <MaxStress>700</MaxStress>
+      <Number>7b583dae-8539-46e3-b692-69223b82499d</Number>
+    </Chassis>
+  </Group>
+  <Group TransmissionType="Manual">
+    <Vechicle Type="AutPark.Cargo" />
+    <Vechicle Type="AutPark.Bus" />
+    <Transmission>
+      <GearNum>7</GearNum>
+      <Manufacturer>MAN</Manufacturer>
+    </Transmission>
+    <Transmission>
+      <GearNum>6</GearNum>
+      <Manufacturer>MAZ</Manufacturer>
+    </Transmission>
+    <Engine>
+      <Type>Diesel</Type>
+      <Volume>15</Volume>
+      <Power>750</Power>
+      <SerialNumber>7355c3d4-e13a-4a7f-9d70-792c91def452</SerialNumber>
+    </Engine>
+    <Engine>
+      <Type>Hybrid</Type>
+      <Volume>6</Volume>
+      <Power>500</Power>
+      <SerialNumber>1564d7cf-a882-4325-94c3-a09db2bdbfc9</SerialNumber>
+    </Engine>
+    <Chassis>
+      <WheelAmount>4</WheelAmount>
+      <MaxStress>50000</MaxStress>
+      <Number>af790dbe-e8d0-4686-bf6a-201efabc1dfb</Number>
+    </Chassis>
+    <Chassis>
+      <WheelAmount>4</WheelAmount>
+      <MaxStress>30000</MaxStress>
+      <Number>fb7f25f7-7134-4a1d-9f39-219e0701280a</Number>
+    </Chassis>
+  </Group>
+</Root>
