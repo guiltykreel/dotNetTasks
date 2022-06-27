@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SomethingFlying
+﻿namespace SomethingFlying
 {
     /// <summary>
     /// Coordinate structure set and get the position of flying object 
@@ -18,11 +12,11 @@ namespace SomethingFlying
         /// <param name="y"> Set y coordinate </param>
         /// <param name="z"> Sez Z coordinate </param>
         public Coordinate(uint x, uint y, uint z)
-            {
-                X = x;
-                Y = y;
-                Z = z;
-            }
+        {
+            X = x;
+            Y = y;
+            Z = z;
+        }
 
         /// <summary>
         /// Set and get X coordinate
@@ -38,8 +32,5 @@ namespace SomethingFlying
         /// Set and get Z coordinate
         /// </summary> 
         public uint Z { get; set; }
-
-        
     }
-    
 }

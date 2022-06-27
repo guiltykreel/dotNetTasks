@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SomethingFlying
+﻿namespace SomethingFlying
 {
     /// <summary>
     /// Interface provides flying objects behaviour
     /// </summary>
-    interface IFlyable 
+    public interface IFlyable
     {
         /// <summary>
         /// show current position of flying object
@@ -26,8 +20,6 @@ namespace SomethingFlying
         /// </summary>
         /// <param name="coordinate"> Get current coordinates of object </param>
         /// <returns>  Return flying time from current position to new position </returns>
-        double GetFlyTime(Coordinate coordinate); 
-        
- 
+        double GetFlyTime(Coordinate coordinate);
     }
 }
