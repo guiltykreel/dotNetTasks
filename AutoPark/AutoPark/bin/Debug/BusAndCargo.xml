@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Garage>
   <Vechicle>
-    <VechicleType>AutPark.Cargo</VechicleType>
+    <VechicleType>AutoPark.Cargo</VechicleType>
     <EngineType>Diesel</EngineType>
-    <EngineSerialNumber>28c6d46d-3b84-4a21-9448-f929b17cb4f5</EngineSerialNumber>
+    <EngineSerialNumber>e85ebac3-225f-4e96-ab06-afcb8e53ad27</EngineSerialNumber>
     <EnginePower>750</EnginePower>
   </Vechicle>
   <Vechicle>
-    <VechicleType>AutPark.Bus</VechicleType>
+    <VechicleType>AutoPark.Bus</VechicleType>
     <EngineType>Hybrid</EngineType>
-    <EngineSerialNumber>721adafe-b6a7-4fea-9426-eb849f72f7b1</EngineSerialNumber>
+    <EngineSerialNumber>26e56b25-1fdf-41cc-83f0-acd975ca5fb6</EngineSerialNumber>
     <EnginePower>500</EnginePower>
   </Vechicle>
 </Garage>

@@ -4,25 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutPark
+namespace AutoPark
 {
     public class Vehicle
     {
-        // Поля класса Vehicle являются в свою очередь классами 
+        
         public Engine Engine ;
         public Chassis Chassis;
         public Transmission Transmission;
-        //private string cartype;
-        public Vehicle(object CarType) // Конструктор принимает "тип" ТС и создает объекты классов "Двигатель", "Шасси", "Трансмиссия"
+
+        //Constructor get the type of vechicle and create Engine, Chasiis and Transmission objects
+        public Vehicle(object CarType) 
         {
             Engine = new Engine(CarType);
             Chassis = new Chassis(CarType);
-            Transmission = new Transmission(CarType);
-            
+            Transmission = new Transmission(CarType);           
         }
 
-
-        public void Description()
+        public void Description() //Write in console description of vechicle's parts
         {
             //Console.WriteLine($"Car type: {Car}");
             Console.WriteLine("");
@@ -33,8 +32,7 @@ namespace AutPark
             Transmission.TransmissionDescription();
             Console.WriteLine("///////////////////////////////////////////////////////////");
         }
-    }
-    
+    }   
 }
         
 

@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Garage>
   <Vechicle>
-    <VechicleType>AutPark.Passenger</VechicleType>
+    <VechicleType>AutoPark.Passenger</VechicleType>
     <Engine>
       <Volume>2</Volume>
       <Power>250</Power>
       <Type>injector</Type>
-      <SerialNumber>008caeec-1d71-47c2-8a3c-6d3a9cf6fd16</SerialNumber>
+      <SerialNumber>f6dfff8d-4c12-45dd-8ddd-1c6ddb68d684</SerialNumber>
     </Engine>
     <Chassis>
       <WheelAmount>4</WheelAmount>
       <MaxStress>5000</MaxStress>
-      <Number>8224d0fc-c748-4b09-9896-0bc4e20c11bf</Number>
+      <Number>77c46ec4-aa4e-42f1-bc45-45929d853135</Number>
     </Chassis>
     <Transmission>
       <GearNum>5</GearNum>
@@ -20,17 +20,17 @@
     </Transmission>
   </Vechicle>
   <Vechicle>
-    <VechicleType>AutPark.Cargo</VechicleType>
+    <VechicleType>AutoPark.Cargo</VechicleType>
     <Engine>
       <Volume>15</Volume>
       <Power>750</Power>
       <Type>Diesel</Type>
-      <SerialNumber>28c6d46d-3b84-4a21-9448-f929b17cb4f5</SerialNumber>
+      <SerialNumber>e85ebac3-225f-4e96-ab06-afcb8e53ad27</SerialNumber>
     </Engine>
     <Chassis>
       <WheelAmount>4</WheelAmount>
       <MaxStress>50000</MaxStress>
-      <Number>99668e9d-e763-4cff-a73c-1f8e255cd793</Number>
+      <Number>6720fb37-8053-4580-80b0-2b1deea81956</Number>
     </Chassis>
     <Transmission>
       <GearNum>7</GearNum>
@@ -39,17 +39,17 @@
     </Transmission>
   </Vechicle>
   <Vechicle>
-    <VechicleType>AutPark.Bus</VechicleType>
+    <VechicleType>AutoPark.Bus</VechicleType>
     <Engine>
       <Volume>6</Volume>
       <Power>500</Power>
       <Type>Hybrid</Type>
-      <SerialNumber>721adafe-b6a7-4fea-9426-eb849f72f7b1</SerialNumber>
+      <SerialNumber>26e56b25-1fdf-41cc-83f0-acd975ca5fb6</SerialNumber>
     </Engine>
     <Chassis>
-      <WheelAmount>4</WheelAmount>
+      <WheelAmount>8</WheelAmount>
       <MaxStress>30000</MaxStress>
-      <Number>457715fe-ee86-452a-adf9-071c6a354461</Number>
+      <Number>6bf03605-8841-40cd-a7dc-ea509225abc5</Number>
     </Chassis>
     <Transmission>
       <GearNum>6</GearNum>
