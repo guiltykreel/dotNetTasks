@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace countsystem
+namespace CountSystem
 {
     class Program
     {
