@@ -2,12 +2,12 @@
 
 namespace CountSystem
 {
-    class Program
+    public class Program
     {
         /// <summary>
         /// Conversion of integer numbers from decimal to another system of calculation (from 2 to 20)
         /// </summary>
-        static void Main()
+        private static void Main()
         {
             int decimalNumber; //Convertible number
             int baseNumber; // Base of calculation system 
@@ -15,13 +15,13 @@ namespace CountSystem
             Console.WriteLine("Enter a number in decimal count system: ");
 
             decimalNumber = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter a base of count system: ");
+            Console.WriteLine("Enter a base of count system (from 2 to 20): ");
 
             baseNumber = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"Result = {ToAnotherCountSystem(decimalNumber, baseNumber)}");
         }
 
-        static string ToAnotherCountSystem(int convertiBledecimalNumber, int countSystemBase)
+        private static string ToAnotherCountSystem(int convertiBledecimalNumber, int countSystemBase)
         {
             int temporaryNumber = convertiBledecimalNumber;
             string result = "";
