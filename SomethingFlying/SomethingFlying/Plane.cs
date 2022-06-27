@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SomethingFlying
 {
     /// <summary>
     /// Class that creatse objects of the plane type  
     /// </summary>
-    class Plane : IFlyable
+    public class Plane : IFlyable
     {
+        private const double Speed = 200; // Initial speed of plane (km/h)
         private const double MaxFlightDistance = 1500; // Travel speed of plane (km)
-        private const long MaxHeight = 15; // Maximum flight height of plane (km)
-        const double Speed = 200; // Initial speed of plane (km/h)
+        private const long MaxHeight = 15; // Maximum flight height of plane (km)        
+        private double time; //Flight time
 
         /// <summary>
         /// Property that defines the coordinates of object 
@@ -23,7 +20,7 @@ namespace SomethingFlying
         /// <summary>
         /// Method that write in console current coordinates of object
         /// </summary>
-        public void GetCurrentPoint()
+        public void GetCurrentPoint() // show current point
         {
             Console.WriteLine($"X: {CurrentPosition.X}; Y: {CurrentPosition.Y}; Z: {CurrentPosition.Z}");
         }
@@ -39,8 +36,8 @@ namespace SomethingFlying
             uint y = Convert.ToUInt32(Console.ReadLine());
             Console.WriteLine("                 Z = ");
             uint z = Convert.ToUInt32(Console.ReadLine());
+
             Limitations(x, y, z);
-            
         }
 
         /// <summary>
@@ -49,25 +46,22 @@ namespace SomethingFlying
         /// <param name="coordinate"> Get current coordinates of object </param>
         /// <returns> Return flying time from current position to new position  </returns>
         public double GetFlyTime(Coordinate coordinate)
-        {
-            double Distance;
-            double Time = 0;
+        {           
             coordinate = CurrentPosition;
+
             FlyTo();
-            
+
             // calculate flight distance
-            Distance = Math.Sqrt(Math.Pow(Convert.ToDouble(CurrentPosition.X - coordinate.X), 2) +
+            time = Math.Sqrt(Math.Pow(Convert.ToDouble(CurrentPosition.X - coordinate.X), 2) +
                 Math.Pow(Convert.ToDouble(CurrentPosition.Y - coordinate.Y), 2) +
                 Math.Pow(Convert.ToDouble(CurrentPosition.Z - coordinate.Z), 2));
-            //calculate flight time
-            
-            for (int n = 0; n < ( Convert.ToInt32(Distance) / 10)-1; n++)
-            {
-                Time = Time + (10 / (Speed + (n * 10)));
-                // speed increase on 10 km/h every 10 km
-            }
 
-            return Time;
+            //calculate flight time
+            for (int n = 0; n < (Convert.ToInt32(time) / 10) - 1; n++)
+            {
+                time = time + (10 / (Speed + (n * 10))); // speed increase on 10 km/h every 10 km
+            }
+            return time;
         }
 
         /// <summary>
@@ -78,21 +72,23 @@ namespace SomethingFlying
         /// <param name = "z" > Get new Z coordinate</param>
         void Limitations(uint x, uint y, uint z)
         {
-            if (z > MaxHeight) //plane can't fly above 10 km 
+            if (z > MaxHeight)  
             {
+                //plane can't fly above 10 km
                 Console.WriteLine("Too high.");
                 FlyTo();
             }
             else if (Math.Sqrt(
                 Math.Pow(
-                    (Convert.ToDouble(CurrentPosition.X) - x), 2) 
+                    (Convert.ToDouble(CurrentPosition.X) - x), 2)
                 + Math.Pow(
-                    (Convert.ToDouble(CurrentPosition.Y) - y), 2) 
+                    (Convert.ToDouble(CurrentPosition.Y) - y), 2)
                 + Math.Pow(
-                    (Convert.ToDouble( CurrentPosition.Z) -z),2) ) > MaxFlightDistance) // max flight distance 15000 km 
+                    (Convert.ToDouble(CurrentPosition.Z) - z), 2)) > MaxFlightDistance)            
             {
                 // Plane can't fly more than 1500 km
                 Console.WriteLine("Too long distance, not enogh fuel.");
+
                 FlyTo();
             }
             else

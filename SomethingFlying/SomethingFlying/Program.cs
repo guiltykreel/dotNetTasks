@@ -1,18 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SomethingFlying
 {
-    class Program
+    /// <summary>
+    /// dotNetTasks
+    /// </summary>
+    public class Program
     {
         /// <summary>
         /// Create flying objects, change their position and calculate flying time to new
         /// position
         /// </summary>
-        static void Main()
+        public static void Main()
         {
             // Create bird
             Bird oriole = new Bird();
@@ -22,20 +21,20 @@ namespace SomethingFlying
             oriole.FlyTo();
             oriole.GetCurrentPoint(); // just flying
 
-            Console.WriteLine($"Oriole fly to a new point in {oriole.GetFlyTime(oriole.CurrentPosition)} hours"); 
+            Console.WriteLine($"Oriole fly to a new point in {oriole.GetFlyTime(oriole.CurrentPosition)} hours");
             //lying with flight time calculate
             oriole.GetCurrentPoint();
 
             //Create plane
-            Plane Airbus = new Plane();
+            Plane airbus = new Plane();
             Console.WriteLine("Airbus in point ");
-            Airbus.GetCurrentPoint();
+            airbus.GetCurrentPoint();
 
-            Airbus.FlyTo();
-            Airbus.GetCurrentPoint();
+            airbus.FlyTo();
+            airbus.GetCurrentPoint();
 
-            Console.WriteLine($"Airbus fly to a new point in {Airbus.GetFlyTime(Airbus.CurrentPosition)} hours"); //lying with flight time calculate
-            Airbus.GetCurrentPoint();
+            Console.WriteLine($"Airbus fly to a new point in {airbus.GetFlyTime(airbus.CurrentPosition)} hours"); //lying with flight time calculate
+            airbus.GetCurrentPoint();
 
             //Create drone
 
@@ -48,7 +47,6 @@ namespace SomethingFlying
 
             Console.WriteLine($"Drone fly to a new point in {drone.GetFlyTime(drone.CurrentPosition)} hours"); //lying with flight time calculate
             drone.GetCurrentPoint();
-
         }
     }
 }
