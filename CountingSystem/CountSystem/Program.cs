@@ -22,17 +22,17 @@ namespace CountSystem
             Console.WriteLine($"Result = {ToAnotherCountSystem(DecimalNumber, BaseNumber)}");
         }
 
-        static string ToAnotherCountSystem(int d, int b) 
+        public string ToAnotherCountSystem(int Decimalnumber, int CountSystemBase) 
         {
             
-            int tmp=d;
+            int TemporaryNumber=Decimalnumber;
             string Result="";
 
            
-            while (tmp > 0) // Convert decimal number into b base calculate system
+            while (TemporaryNumber > 0) // Convert decimal number into b base calculate system
             {
                 //reverse of the recording order 
-                switch (tmp % b) // if the reminder is 10 or more write symbols
+                switch (TemporaryNumber % CountSystemBase) // if the reminder is 10 or more write symbols
                 {
                     case 10:
                         Result = Result.Insert(0, "A");
@@ -65,10 +65,10 @@ namespace CountSystem
                         Result = Result.Insert(0, "J");
                         break;
                     default:
-                        Result = Result.Insert(0, Convert.ToString(tmp % b));
+                        Result = Result.Insert(0, Convert.ToString(TemporaryNumber % CountSystemBase));
                         break;
                 }
-                tmp = tmp / b;
+                TemporaryNumber = TemporaryNumber / CountSystemBase;
             }
             return Result;
 
