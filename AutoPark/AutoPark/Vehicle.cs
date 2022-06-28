@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace AutoPark
 {
+    /// <summary>
+    /// Base class for "Passenger", "Cargo", "Bus" and "Scooter" classes
+    /// </summary>
     public class Vehicle
-    {
-        
+    {       
         public Engine Engine ;
         public Chassis Chassis;
         public Transmission Transmission;

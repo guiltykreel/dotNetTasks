@@ -3,13 +3,13 @@
   <Vechicle>
     <VechicleType>AutoPark.Cargo</VechicleType>
     <EngineType>Diesel</EngineType>
-    <EngineSerialNumber>e85ebac3-225f-4e96-ab06-afcb8e53ad27</EngineSerialNumber>
+    <EngineSerialNumber>bf87fbed-dca3-4410-84df-f498a38b2942</EngineSerialNumber>
     <EnginePower>750</EnginePower>
   </Vechicle>
   <Vechicle>
     <VechicleType>AutoPark.Bus</VechicleType>
     <EngineType>Hybrid</EngineType>
-    <EngineSerialNumber>26e56b25-1fdf-41cc-83f0-acd975ca5fb6</EngineSerialNumber>
+    <EngineSerialNumber>e0d6ee4a-7893-494a-819a-32c6876bc279</EngineSerialNumber>
     <EnginePower>500</EnginePower>
   </Vechicle>
 </Garage>

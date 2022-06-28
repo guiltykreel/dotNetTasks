@@ -8,7 +8,6 @@ namespace AutoPark
 {
     public class Bus : Vehicle
     {
-
         private static string CarType = "Bus";
         public string brand;
         public string year;
@@ -26,6 +25,17 @@ namespace AutoPark
             this.isDoubleDecker = isDoubleDecker;
             this.maxPassengersNumber = maxPassengersNumber;
             this.destination = destination;
+        }
+
+        public void GetDescription()
+        {
+            Console.WriteLine($"Brand: {brand}");
+            Console.WriteLine($"Year: {year}");
+            Console.WriteLine($"id: {id}");
+            Console.WriteLine($"Double Decker: {isDoubleDecker}");
+            Console.WriteLine($"Number pf passengers: {maxPassengersNumber}");
+            Console.WriteLine($"Destination: {destination}");
+            base.Description();
         }
     }
 }

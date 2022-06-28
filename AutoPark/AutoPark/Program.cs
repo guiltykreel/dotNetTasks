@@ -18,36 +18,50 @@ namespace AutoPark
         /// </summary>
         static void Main()
         {
-            //create vehicle objects
+            //OOP Task
+            // Create objects with "Passenger", "Cargo", "Bus", "Scooter" types
+            Passenger passenger = new Passenger("BMW", "1996", 1, 2);
+            Cargo cargo = new Cargo("MAN", "2011", 2, "TECO", false, 200);
+            Bus bus = new Bus("MAZ", "1578", 3, true, 95, "Intercity");
+            Scooter scooter = new Scooter("Minsk", "2037", 4, true, "Sport");
 
-            var Garage = new List<Vehicle> 
-            {
-                new Passenger("BMW", "1996", 1, 2), 
-                new Cargo("MAN", "2011", 2, "TECO", false, 200), 
-                new Bus("MAZ", "1578", 3, true, 95, "Intercity"), 
-                new Scooter("Minsk", "2037", 4, true, "Sport")  
-            };
+            // Write in console full description of every vehicle
+            passenger.GetDescription();
+            cargo.GetDescription();
+            bus.GetDescription();
+            scooter.GetDescription();
 
-            // Create LINQ respond querry to describe vehicles with engine volume more 1.5 
+            // Collections Task
+            // Create list of Vehicle objects
+            var Garage = new List<Vehicle>();
+            Garage.Add(passenger);
+            Garage.Add(cargo);
+            Garage.Add(bus);
+            Garage.Add(scooter);
+            
+            // Create LINQ querry to describe vehicles with engine volume more 1.5 
             var ByEngineVolume = new XElement("Garage",
                 from transport in Garage
                 where transport.Engine.Volume > 1.5
                 select new XElement("Vechicle",
                     new XElement("VechicleType", transport.GetType()),
+                        
                         new XElement("Engine",
                             new XElement("Volume", transport.Engine.Volume),
                             new XElement("Power", transport.Engine.Power),
                             new XElement("Type", transport.Engine.Type),
-                            new XElement("SerialNumber", transport.Engine.SerialNumber)),
+                            new XElement("SerialNumber", transport.Engine.SerialNumber)), // end "engine"
+                        
                         new XElement("Chassis",
                             new XElement("WheelAmount", transport.Chassis.WheelAmount),
                             new XElement("MaxStress", transport.Chassis.MaxStress),
-                            new XElement("Number", transport.Chassis.Number)),
+                            new XElement("Number", transport.Chassis.Number)), // end "chassis"
+                        
                         new XElement("Transmission",
                             new XElement("GearNum", transport.Transmission.GearNum),
                             new XElement("Manufacturer", transport.Transmission.Manufacturer),
-                            new XElement("Type", transport.Transmission.Type))
-                        )
+                            new XElement("Type", transport.Transmission.Type)) // end "transmission"
+                        )               
                 );
 
             //save result into xml file
@@ -60,6 +74,7 @@ namespace AutoPark
                 from transport in Garage
                 where transport.GetType() == typeof(Cargo) ^ transport.GetType() == typeof(Bus)
                 select new XElement("Vechicle",
+                    
                     new XElement("VechicleType", transport.GetType()),
                         new XElement("EngineType", transport.Engine.Type),
                         new XElement("EngineSerialNumber", transport.Engine.SerialNumber),
@@ -72,11 +87,11 @@ namespace AutoPark
             SecondReport.Save("BusAndCargo.xml");
 
             //for grouping by transmission type, create querry to full information about vechicle 
-            var FullData = new XElement("Garage",
+            var fullData = new XElement("Garage",
                 from transport in Garage
                 select new XElement("Vechicle",
                     new XElement("VechicleType", transport.GetType()),
-                        
+                    
                             new XElement("Volume", transport.Engine.Volume),
                             new XElement("Power", transport.Engine.Power),
                             new XElement("Type", transport.Engine.Type),
@@ -93,37 +108,43 @@ namespace AutoPark
                                            
             // grouping by transmission type
             var grouped = new XElement("Root",
-                from transport in FullData.Elements("Vechicle")
+                from transport in fullData.Elements("Vechicle")
                 group transport by (string)transport.Element("TransmissionType") into Grouped
                 select new XElement("Group",
                     new XAttribute("TransmissionType", Grouped.Key),
                     from vehicle in Grouped
                     select new XElement("Vechicle",
-                    new XAttribute("Type", (string)vehicle.Element("VechicleType"))),                    
+                    new XAttribute("Type", (string)vehicle.Element("VechicleType"))), 
+                    
                     from transmission in Grouped
                     select new XElement("Transmission",
                     transmission.Element("GearNum"),
-                    transmission.Element("Manufacturer")),
+                    transmission.Element("Manufacturer")), // end "transmission"
+
                     from engine in Grouped
                     select new XElement("Engine",
                         engine.Element("Type"),
                         engine.Element("Volume"),
                         engine.Element("Power"),
-                        engine.Element("SerialNumber")),
+                        engine.Element("SerialNumber")), // end "engine"
+
                     from chassis in Grouped
                     select new XElement("Chassis",
-                    chassis.Element("WheelAmount"),
-                    chassis.Element("MaxStress"),
-                    chassis.Element("Number"))
+                        chassis.Element("WheelAmount"),
+                        chassis.Element("MaxStress"),
+                        chassis.Element("Number")) // end "chassis"
                     )
                 );
 
-            //save result into xml file
+            //save result into xml file 
             XDocument ThirdReport = new XDocument();
             ThirdReport.Add(grouped);
             ThirdReport.Save("GroupByTransmission.xml");
-            Console.WriteLine(grouped);            
-        }
+            //Console.WriteLine(grouped);
+
+            // All xml files save at at bin\Debug
+            Console.ReadKey();
+        }        
     }
 }
 

@@ -23,5 +23,14 @@ namespace AutoPark
             this.id = id;
             this.numberOfPassengers = nunumberOfPassengers;
         }
+
+        public void GetDescription()
+        {
+            Console.WriteLine($"Brand: {brand}");
+            Console.WriteLine($"Year: {year}");
+            Console.WriteLine($"id: {id}");
+            Console.WriteLine($"Number of passengers: {numberOfPassengers}");
+            base.Description();
+        }
     }
 }

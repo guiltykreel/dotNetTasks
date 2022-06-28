@@ -8,7 +8,6 @@ namespace AutoPark
 {
     public class Scooter :Vehicle
     {
-
         private static string CarType = "Scooter";
         public string brand;
         public string year;
@@ -24,6 +23,16 @@ namespace AutoPark
             this.id = id;
             this.isSidecar = isSidecar;
             this.design = design;
+        }
+
+        public void GetDescription()
+        {
+            Console.WriteLine($"Brand: {brand}");
+            Console.WriteLine($"Year: {year}");
+            Console.WriteLine($"id: {id}");
+            Console.WriteLine($"With sidecar {isSidecar}");
+            Console.WriteLine($"Design: {design}");
+            base.Description();
         }
     }
 }
