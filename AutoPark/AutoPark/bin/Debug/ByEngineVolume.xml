@@ -6,12 +6,12 @@
       <Volume>2</Volume>
       <Power>250</Power>
       <Type>injector</Type>
-      <SerialNumber>f6dfff8d-4c12-45dd-8ddd-1c6ddb68d684</SerialNumber>
+      <SerialNumber>7d9d7981-659c-4999-b059-2ad5c6e00198</SerialNumber>
     </Engine>
     <Chassis>
       <WheelAmount>4</WheelAmount>
       <MaxStress>5000</MaxStress>
-      <Number>77c46ec4-aa4e-42f1-bc45-45929d853135</Number>
+      <Number>a786eba1-87ef-4fdb-bc29-712980f6973f</Number>
     </Chassis>
     <Transmission>
       <GearNum>5</GearNum>
@@ -25,12 +25,12 @@
       <Volume>15</Volume>
       <Power>750</Power>
       <Type>Diesel</Type>
-      <SerialNumber>e85ebac3-225f-4e96-ab06-afcb8e53ad27</SerialNumber>
+      <SerialNumber>bf87fbed-dca3-4410-84df-f498a38b2942</SerialNumber>
     </Engine>
     <Chassis>
       <WheelAmount>4</WheelAmount>
       <MaxStress>50000</MaxStress>
-      <Number>6720fb37-8053-4580-80b0-2b1deea81956</Number>
+      <Number>81cc2087-621c-49db-ad99-fce0a3990ba2</Number>
     </Chassis>
     <Transmission>
       <GearNum>7</GearNum>
@@ -44,12 +44,12 @@
       <Volume>6</Volume>
       <Power>500</Power>
       <Type>Hybrid</Type>
-      <SerialNumber>26e56b25-1fdf-41cc-83f0-acd975ca5fb6</SerialNumber>
+      <SerialNumber>e0d6ee4a-7893-494a-819a-32c6876bc279</SerialNumber>
     </Engine>
     <Chassis>
       <WheelAmount>8</WheelAmount>
       <MaxStress>30000</MaxStress>
-      <Number>6bf03605-8841-40cd-a7dc-ea509225abc5</Number>
+      <Number>4a24a93f-b8da-454d-8e98-db96320937d4</Number>
     </Chassis>
     <Transmission>
       <GearNum>6</GearNum>

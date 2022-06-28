@@ -26,5 +26,16 @@ namespace AutoPark
             this.isRefregerator = isRefregerator;
             this.bodyVolume = bodyVolume;
         }
+
+        public void GetDescription()
+        {
+            Console.WriteLine($"Brand: {brand}");
+            Console.WriteLine($"Year: {year}");
+            Console.WriteLine($"id: {id}");
+            Console.WriteLine($"Company name: {companyName}");
+            Console.WriteLine($"With refragirator: {isRefregerator}");
+            Console.WriteLine($"Body Volume: {bodyVolume}");
+            base.Description();
+        }
     }
 }
