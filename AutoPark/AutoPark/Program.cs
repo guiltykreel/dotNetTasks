@@ -67,7 +67,7 @@ namespace AutoPark
             //save result into xml file
             XDocument Report = new XDocument();
             Report.Add(ByEngineVolume);
-            Report.Save("ByEngineVolume.xml");
+            Report.Save("CollectionsReport\\ByEngineVolume.xml");
 
             // create LINQ querry to describe engine of Cargo and Bus 
             var BusAndCargo = new XElement("Garage",
@@ -84,7 +84,7 @@ namespace AutoPark
             // save result into xml file
             XDocument SecondReport = new XDocument();
             SecondReport.Add(BusAndCargo);
-            SecondReport.Save("BusAndCargo.xml");
+            SecondReport.Save("CollectionsReport\\BusAndCargo.xml");
 
             //for grouping by transmission type, create querry to full information about vechicle 
             var fullData = new XElement("Garage",
@@ -139,7 +139,7 @@ namespace AutoPark
             //save result into xml file 
             XDocument ThirdReport = new XDocument();
             ThirdReport.Add(grouped);
-            ThirdReport.Save("GroupByTransmission.xml");
+            ThirdReport.Save("CollectionsReport\\GroupByTransmission.xml");
             //Console.WriteLine(grouped);
 
             // All xml files save at at bin\Debug
