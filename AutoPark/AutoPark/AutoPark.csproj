@@ -65,8 +65,12 @@
     <Content Include="CollectionsReport\ByEngineVolume.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="CollectionsReport\BusAndCargo.xml" />
-    <Content Include="CollectionsReport\GroupedByTransmission.xml" />
+    <Content Include="CollectionsReport\BusAndCargo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CollectionsReport\GroupedByTransmission.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
