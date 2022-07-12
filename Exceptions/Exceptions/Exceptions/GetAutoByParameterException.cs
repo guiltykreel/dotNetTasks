@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoPark.Exceptions
 {
-    public class GetAutoByParameterException:ArgumentException
+    public class GetAutoByParameterException : ArgumentException
     {
         public string FieldName { get;}
         public string FieldValue { get;}

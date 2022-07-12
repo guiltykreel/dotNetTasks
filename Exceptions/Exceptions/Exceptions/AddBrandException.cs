@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoPark.Exceptions
 {
-    internal class AddBrandException :ArgumentException
+    public class AddBrandException : Exception
     {
         public string Brand { get; }
 

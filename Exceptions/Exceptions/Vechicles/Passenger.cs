@@ -22,6 +22,7 @@ namespace AutoPark
             {
                 //InitializationExeption Model of initializated object is not contained in 
                 //Model list (xml file)
+                //filepath is DataFiles\CarModelList.xml
                 if (DataFile.GetModelList().Contains(value))
                 {
                     brand = value;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoPark.Exceptions
 {
-    public class AutoparkException : ArgumentException
+    public class AutoparkException : Exception
     {
         public string Brand { get; }
 

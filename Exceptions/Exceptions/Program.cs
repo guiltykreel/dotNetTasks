@@ -32,20 +32,23 @@ namespace AutoPark
             /*
              *ATTENTION!!!!!!!!!!!!!!!!!!!!!!!!!!
              *ADD EXCEPTION TO OTHER VEHICLES
-             */
+             */            
             try
             {
-                Passenger badPassenger = new Passenger("Tesa", "1996", 1, 2); // "Tesa" is not "Tesla". BAD CASE
+                Passenger badPassenger = new Passenger("Tesa", "1996", 1, 2); 
+                // "Tesa" is not "Tesla". BAD CASE
             }
             catch (Exceptions.AutoparkException e)
             {
                 Console.WriteLine($"Error: {e.Message}, {e.Brand}");
             }
 
+            Console.WriteLine("\n");
             // Trying add new vehicle brand in source file
             try
             {
-                DataFile.AddBrandToData("Volvo!"); //Check lenghth and special symols contains. BAD CASE
+                DataFile.AddBrandToData("Volvo!"); 
+                //Check lenghth and special symols contains. BAD CASE
             }
             catch (Exceptions.AddBrandException e)
             {
@@ -59,6 +62,7 @@ namespace AutoPark
                 }
             }
 
+            Console.WriteLine("\n");
             // Tying find car in garage by field 
             try
             {
@@ -68,7 +72,24 @@ namespace AutoPark
             catch (Exceptions.GetAutoByParameterException e)
             {
                 Console.WriteLine($"Error: {e.Message}, {e.FieldName}");
-            }           
+            }
+
+            Console.WriteLine("\n");
+            //Trying update auto in Garage           
+            Passenger newPassenger = new Passenger("Tesla", "2021", 5, 1);
+
+            try
+            {
+                UpdateAuto(ref Garage, 1, newPassenger); // Good case
+                UpdateAuto(ref Garage, 0, newPassenger); // BAD CASE
+            }
+            catch (Exceptions.UpdateAutoException e)
+            {
+
+                Console.WriteLine($"Error: {e.Message}");
+            }
+
+            Console.ReadKey();
         }
 
         /// <summary>
@@ -142,6 +163,37 @@ namespace AutoPark
                 }
             }
         }
-    
+
+        /// <summary>
+        /// Replace auto in garage by id with new car 
+        /// </summary>
+        /// <param name="Garage">Collection</param>
+        /// <param name="id">Replaced car id</param>
+        /// <param name="NewCar">Auto which is replace with</param>
+        static void UpdateAuto(ref List<Vehicle> Garage, int id, Vehicle NewCar)
+        {
+            var ReplaceCar = from car in Garage
+                             where car.GetType().GetField("id").GetValue(car).ToString() == id.ToString()
+                             select car;
+            if (ReplaceCar.Count() == 0)
+            {
+                string error = $"Can't find car with id {id}";
+                throw new Exceptions.UpdateAutoException(error, id);
+            }
+            else
+            {
+                foreach (var removedCar in ReplaceCar)
+                {
+                    Console.WriteLine($"Remove car with id: " +
+                        $"{removedCar.GetType().GetField("id").GetValue(removedCar)}");
+                }
+
+                Garage.Remove(ReplaceCar.First()); //Remove found car
+                Garage.Add(NewCar); // Add new car  
+
+                Console.WriteLine("New car was added in Garage");
+            }
+                     
+        }
     }
 }
