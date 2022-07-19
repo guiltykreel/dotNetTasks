@@ -33,7 +33,6 @@ namespace AutoPark
             Chassis.ChassisDescription();
             Console.WriteLine("");
             Transmission.TransmissionDescription();
-            Console.WriteLine("///////////////////////////////////////////////////////////");
         }
     }   
 }

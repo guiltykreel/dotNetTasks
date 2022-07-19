@@ -59,6 +59,7 @@ namespace AutoPark
             {
                 XElement BrandTitle = XData.Element("CarModelList");
                 BrandTitle.Add(new XElement("Model", new XAttribute("title", brand)));
+                Console.WriteLine($"{brand} added to list \n");
             }                       
             //File changes are not saved
         }

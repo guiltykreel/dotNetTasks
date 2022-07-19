@@ -9,16 +9,35 @@ namespace AutoPark
     public class Scooter :Vehicle
     {
         private static string CarType = "Scooter";
-        public string brand;
+        private string brand;
         public string year;
         public int id;
         public bool isSidecar;
-        public string design; 
+        public string design;
+
+        public string Brand
+        {
+            get { return brand; }
+            set
+            {
+                //InitializationExeption Model of initializated object is not contained in 
+                //Model list (xml file)
+                //filepath is DataFiles\CarModelList.xml
+                if (DataFile.GetModelList().Contains(value))
+                {
+                    brand = value;
+                }
+                else
+                {
+                    throw new Exceptions.AutoparkException("This model is out of list", value);
+                }
+            }
+        }
 
         public Scooter(string brand, string year, int id,
             bool isSidecar, string design) : base(CarType) 
         { 
-            this.brand = brand;
+            Brand = brand;
             this.year = year;
             this.id = id;
             this.isSidecar = isSidecar;

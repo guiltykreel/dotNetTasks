@@ -5,4 +5,7 @@
   <Model title ="Audi"></Model>
   <Model title ="Opel"></Model>
   <Model title ="Tesla"></Model>
+  <Model title ="MAN"></Model>
+  <Model title ="MAZ"></Model>
+  <Model title ="Minsk"></Model>
 </CarModelList>

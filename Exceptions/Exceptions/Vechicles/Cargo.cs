@@ -9,17 +9,36 @@ namespace AutoPark
     public class Cargo : Vehicle
     {
         private static string CarType = "Cargo"; 
-        public string brand;
+        private string brand;
         public string year;
         public int id;
         public string companyName;
         public bool isRefregerator;
-        public int bodyVolume; 
+        public int bodyVolume;
+
+        public string Brand
+        {
+            get { return brand; }
+            set
+            {
+                //InitializationExeption Model of initializated object is not contained in 
+                //Model list (xml file)
+                //filepath is DataFiles\CarModelList.xml
+                if (DataFile.GetModelList().Contains(value))
+                {
+                    brand = value;
+                }
+                else
+                {
+                    throw new Exceptions.AutoparkException("This model is out of list", value);
+                }
+            }
+        }
 
         public Cargo(string brand, string year, int id, string companyName, 
             bool isRefregerator, int bodyVolume) : base(CarType) 
         {
-            this.brand = brand;
+            Brand = brand;
             this.year = year;
             this.id = id;
             this.companyName = companyName;

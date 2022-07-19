@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace AutoPark.Exceptions
 {
-    public class UpdateAutoException : ArgumentException
+    public class RemoveAutoException : Exception
     {
-        public int Id { get;}
+        public int Id { get; }
 
-        public UpdateAutoException(string message, int id) : base (message)
+        public RemoveAutoException(string message, int id): base(message)
         {
             Id = id;
         }

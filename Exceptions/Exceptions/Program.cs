@@ -28,11 +28,7 @@ namespace AutoPark
             Garage.Add(scooter);
 
             // Exception Task
-            //Trying add new Vehicle in list
-            /*
-             *ATTENTION!!!!!!!!!!!!!!!!!!!!!!!!!!
-             *ADD EXCEPTION TO OTHER VEHICLES
-             */            
+            //Trying add new Vehicle in list        
             try
             {
                 Passenger badPassenger = new Passenger("Tesa", "1996", 1, 2); 
@@ -43,12 +39,14 @@ namespace AutoPark
                 Console.WriteLine($"Error: {e.Message}, {e.Brand}");
             }
 
-            Console.WriteLine("\n");
+            Console.WriteLine("/////////////////////////////////////////\n");
             // Trying add new vehicle brand in source file
             try
             {
+                DataFile.AddBrandToData("KIA");
+                //Good case
                 DataFile.AddBrandToData("Volvo!"); 
-                //Check lenghth and special symols contains. BAD CASE
+                //Check lenghth and special symbols contains. BAD CASE
             }
             catch (Exceptions.AddBrandException e)
             {
@@ -56,17 +54,19 @@ namespace AutoPark
             }
             finally
             {
+                Console.WriteLine("Current model list: ");
                 foreach (var brand in DataFile.GetModelList())
                 {
                     Console.WriteLine(brand);
                 }
             }
 
-            Console.WriteLine("\n");
+            Console.WriteLine("///////////////////////////////////////////////\n");
             // Tying find car in garage by field 
             try
             {
-                GetAutoByParameter(Garage, "isRefregerator", "True"); //Good case, but bad value
+                GetAutoByParameter(Garage, "isRefregerator", "True"); 
+                //Good case, but bad value (value is not checked)
                 GetAutoByParameter(Garage, "something", "BMW"); //BAD CASE
             }
             catch (Exceptions.GetAutoByParameterException e)
@@ -74,7 +74,8 @@ namespace AutoPark
                 Console.WriteLine($"Error: {e.Message}, {e.FieldName}");
             }
 
-            Console.WriteLine("\n");
+            Console.WriteLine("//////////////////////////////////////////////////////\n");
+
             //Trying update auto in Garage           
             Passenger newPassenger = new Passenger("Tesla", "2021", 5, 1);
 
@@ -85,7 +86,18 @@ namespace AutoPark
             }
             catch (Exceptions.UpdateAutoException e)
             {
+                Console.WriteLine($"Error: {e.Message}");
+            }
 
+            Console.WriteLine("//////////////////////////////////////////////////////\n");
+            //Trying delete auto from Garage
+            try
+            {
+                RemoveAuto(ref Garage, 5); //Good case. Remove auto with id = 5
+                RemoveAuto(ref Garage, 25); //BAD CASE
+            }
+            catch (Exceptions.RemoveAutoException e)
+            {
                 Console.WriteLine($"Error: {e.Message}");
             }
 
@@ -107,59 +119,21 @@ namespace AutoPark
                                    (car.Engine.GetType().GetField(findField) != null) ||
                                    (car.Transmission.GetType().GetField(findField) != null) ||
                                    (car.Chassis.GetType().GetField(findField) != null) ||
-                                   ((car.GetType().GetProperty(findField.Replace(findField.First(), //asdqd
+                                   ((car.GetType().GetProperty(findField.Replace(findField.First(),
                                    char.ToUpper((findValue.First())))) != null))
-                                   
                              select car;
             
             if (FindQuerry.Count() == 0)
             {
-                //If noone object contains findField
+                //If FindQuerry does not contain any object
                 throw new Exceptions.GetAutoByParameterException("The parameter you are trying to find does not exist: ", findField, findValue);
             }
             else
             {
-                Console.WriteLine(FindQuerry.Count());// this is exception case (if FindQuerry count = 0 )
-                foreach (var car in FindQuerry) //Contain fields of searched object
+                //Console.WriteLine(FindQuerry.Count());// this is exception case (if FindQuerry count = 0 )
+                foreach (var car in FindQuerry)
                 {
-                    //Get each field and it's value in fields
-                    foreach (var field in car.GetType().GetFields())
-                    {
-                        if (field.FieldType == typeof(Engine))
-                        {
-                            // if field type is Engine
-                            Console.WriteLine(field.Name);
-                            foreach (var specialField in field.FieldType.GetFields())// Get special field 
-                            {
-                                Console.WriteLine($"{specialField.Name} = {specialField.GetValue(car.Engine)}");
-                                // write special field name and value
-                            }
-                        }
-                        else if (field.FieldType == typeof(Chassis))
-                        {
-                            //if field type is Chassis
-                            Console.WriteLine(field.Name);
-                            foreach (var specialField in field.FieldType.GetFields())// Get special field 
-                            {
-                                Console.WriteLine($"{specialField.Name} = {specialField.GetValue(car.Chassis)}");
-                                // write special field name and value
-                            }
-                        }
-                        else if (field.FieldType == typeof(Transmission))
-                        {
-                            //if field type is Transmission
-                            Console.WriteLine(field.Name);
-                            foreach (var specialField in field.FieldType.GetFields())// Get special field 
-                            {
-                                Console.WriteLine($"{specialField.Name} = {specialField.GetValue(car.Transmission)}");
-                                // write special field name and value
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine($"{field.Name} = {field.GetValue(car)}"); //get field name and value  
-                        }
-                    }
+                    car.GetType().GetMethod("GetDescription").Invoke(car,null);
                 }
             }
         }
@@ -175,25 +149,52 @@ namespace AutoPark
             var ReplaceCar = from car in Garage
                              where car.GetType().GetField("id").GetValue(car).ToString() == id.ToString()
                              select car;
+
             if (ReplaceCar.Count() == 0)
             {
-                string error = $"Can't find car with id {id}";
+                //If ReplaceCar does not contain any object 
+                string error = $"Can't find car with id {id}\n";
                 throw new Exceptions.UpdateAutoException(error, id);
             }
             else
             {
-                foreach (var removedCar in ReplaceCar)
+                /*foreach (var removedCar in ReplaceCar)
                 {
-                    Console.WriteLine($"Remove car with id: " +
+                    Console.WriteLine($"Update car with id: " +
                         $"{removedCar.GetType().GetField("id").GetValue(removedCar)}");
-                }
+                }*/
 
                 Garage.Remove(ReplaceCar.First()); //Remove found car
                 Garage.Add(NewCar); // Add new car  
 
-                Console.WriteLine("New car was added in Garage");
+                Console.WriteLine($"The car with id = {id} is updated!\n");
             }
                      
+        }
+
+        /// <summary>
+        /// Remove auto from collection 
+        /// </summary>
+        /// <param name="Garage">Collection of the objects</param>
+        /// <param name="id">Remove by id</param>
+        static void RemoveAuto(ref List<Vehicle> Garage, int id) 
+        {
+            var RemoveCar = from car in Garage
+                             where car.GetType().GetField("id").GetValue(car).ToString() == id.ToString()
+                             select car;
+            if (RemoveCar.Count() == 0)
+            {
+                //If RemoveCar does not contain any objects
+                string error = $"Can't remove car with id {id}, it does not exist";
+                throw new Exceptions.RemoveAutoException(error, id);
+            }
+            else
+            {
+                Console.WriteLine($"Remove car with id: " + 
+                    $"{ RemoveCar.First().GetType().GetField("id").GetValue(RemoveCar.First())}");
+
+                Garage.Remove(RemoveCar.First()); //Remove found car
+            }
         }
     }
 }

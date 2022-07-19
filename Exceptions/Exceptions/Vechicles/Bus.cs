@@ -9,17 +9,36 @@ namespace AutoPark
     public class Bus : Vehicle
     {
         private static string CarType = "Bus";
-        public string brand;
+        private string brand;
         public string year;
         public int id;
         public bool isDoubleDecker;
         public int maxPassengersNumber;
         public string destination;
 
+        public string Brand
+        {
+            get { return brand; }
+            set
+            {
+                //InitializationExeption Model of initializated object is not contained in 
+                //Model list (xml file)
+                //filepath is DataFiles\CarModelList.xml
+                if (DataFile.GetModelList().Contains(value))
+                {
+                    brand = value;
+                }
+                else
+                {
+                    throw new Exceptions.AutoparkException("This model is out of list", value);
+                }
+            }
+        }
+
         public Bus(string brand, string year, int id, bool isDoubleDecker,
             int maxPassengersNumber, string destination) : base(CarType) 
         {
-            this.brand = brand;
+            Brand = brand;
             this.year = year;
             this.id = id;
             this.isDoubleDecker = isDoubleDecker;
