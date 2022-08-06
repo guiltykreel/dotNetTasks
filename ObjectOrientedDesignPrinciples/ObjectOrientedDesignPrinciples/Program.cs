@@ -12,6 +12,7 @@ class Program
         double modelPrice;
         Automobile newAutomobile;
 
+        // create new automobiles and add it to list (singleton)
         for (int i = 0; i < 5; i++)
         {
             Console.WriteLine("Enter automobile type: ");
