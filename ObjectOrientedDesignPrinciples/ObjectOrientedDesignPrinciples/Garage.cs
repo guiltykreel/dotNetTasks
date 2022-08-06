@@ -7,7 +7,8 @@
     {
         private static Garage _instance;
         private static List<Automobile> automobiles = new List<Automobile>();
-        public List<Automobile> Automobiles
+
+        public List<Automobile> Automobiles //collection of automobiles
         {
             get { return automobiles; }
         }
@@ -23,6 +24,10 @@
             return _instance;
         }
 
+        /// <summary>
+        /// add created Automobile object and add it to garage
+        /// </summary>
+        /// <param name="newAuto"> Automobile class</param>
         public void AddToGarage(Automobile newAuto)
         {
             automobiles.Add(newAuto);

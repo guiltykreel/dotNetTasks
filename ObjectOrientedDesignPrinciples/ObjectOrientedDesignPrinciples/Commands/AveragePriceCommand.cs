@@ -1,5 +1,8 @@
 ﻿namespace ObjectOrientedDesignPrinciples.Commands
 {
+    /// <summary>
+    /// calculate average price of automobile in garage
+    /// </summary>
     internal class AveragePriceCommand : ICommand
     {
         private double averagePrice;
@@ -8,9 +11,10 @@
         {
             var allPrices = from automobiles in garage.Automobiles
                             select automobiles.Price;
+
             foreach (var prices in allPrices)
             {
-                averagePrice = averagePrice + prices;
+                averagePrice += prices;
             }
 
             averagePrice = averagePrice / new CountAllCommand(garage).Count;
