@@ -13,9 +13,10 @@ namespace UnitTestFrameworksTask.Tests
         {
             // arrange
             int result;
+            Calculation calculation = new Calculation();
 
             //act
-            result = Calculation.GetInstance().CountMaximumDifferentNumbers(value);
+            result = calculation.CountMaximumDifferentNumbers(value);
 
             //assert
             Assert.AreEqual(expected, result);

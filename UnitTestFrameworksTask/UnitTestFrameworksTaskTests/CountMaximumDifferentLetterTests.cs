@@ -12,10 +12,11 @@ namespace UnitTestFrameworksTask.Tests
         public void CountMaximumDifferentLetterTest(string value, int expected)
         {
             // arrange
-            int result;                      
+            int result;
+            Calculation calculation = new Calculation();
             
             //act
-            result = Calculation.GetInstance().CountMaximumDifferentLetter(value);
+            result = calculation.CountMaximumDifferentLetter(value);
 
             //assert
             Assert.AreEqual(expected, result);

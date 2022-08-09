@@ -14,21 +14,24 @@ public class Program
 
         someString = "qwe123rr";
         Console.WriteLine(someString);
+
+        Calculation calculation = new Calculation();
+
         Console.WriteLine($" Maximum number of consecutive different symbols is " +
-            $"{Calculation.GetInstance().CountMaximumDifferrentSymbols(someString)}");
+            $"{calculation.CountMaximumDifferrentSymbols(someString)}");
         Console.WriteLine($"Maximum number of consecutive different letters is " +
-            $"{Calculation.GetInstance().CountMaximumDifferentLetter(someString)}");
+            $"{calculation.CountMaximumDifferentLetter(someString)}");
         Console.WriteLine($"Maximum number of consecutive different numbers is " +
-            $"{Calculation.GetInstance().CountMaximumDifferentNumbers(someString)}");
+            $"{calculation.CountMaximumDifferentNumbers(someString)}");
 
         someString = "123qwe11";
         Console.WriteLine(someString);
         Console.WriteLine($" Maximum number of consecutive different symbols is " +
-            $"{Calculation.GetInstance().CountMaximumDifferrentSymbols(someString)}");
+            $"{calculation.CountMaximumDifferrentSymbols(someString)}");
         Console.WriteLine($"Maximum number of consecutive different letters is " +
-            $"{Calculation.GetInstance().CountMaximumDifferentLetter(someString)}");
+            $"{calculation.CountMaximumDifferentLetter(someString)}");
         Console.WriteLine($"Maximum number of consecutive different numbers is " +
-            $"{Calculation.GetInstance().CountMaximumDifferentNumbers(someString)}");
+            $"{calculation.CountMaximumDifferentNumbers(someString)}");
     }
 
     

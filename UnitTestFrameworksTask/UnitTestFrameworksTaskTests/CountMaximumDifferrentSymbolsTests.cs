@@ -12,9 +12,10 @@ namespace UnitTestFrameworksTask.Tests
         {
             // arrange
             int result;
+            Calculation calculation = new Calculation();
 
             //act
-            result = Calculation.GetInstance().CountMaximumDifferrentSymbols(value);
+            result = calculation.CountMaximumDifferrentSymbols(value);
 
             //assert
             Assert.AreEqual(expected, result);

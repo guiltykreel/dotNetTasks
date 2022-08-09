@@ -2,20 +2,7 @@
 {
     public sealed class Calculation
     {
-        private static Calculation _instance;
-
         public string countInThatString { get; set; }
-
-        private Calculation() { }
-
-        public static Calculation GetInstance()
-        {
-            if (_instance == null)
-            {
-                _instance = new Calculation();
-            }
-            return _instance;
-        }
 
         public int CountMaximumDifferrentSymbols(string countThatString)
         {
