@@ -1,0 +1,8 @@
+﻿gmail.com
+
+sign in (id): gmail-sign-in 
+login textbox: input type email
+[@id="identifierNext"]/div/button
+
+
+<tr tabindex="0" id="gwt-uid-8_41495432" onclick="" class="GCSDBRWBOT GCSDBRWBAU listUnread  trow">
