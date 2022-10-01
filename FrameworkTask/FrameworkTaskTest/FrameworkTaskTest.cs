@@ -29,6 +29,7 @@ namespace FrameworkTaskTest
 
             //Act
             googleCloud.openPage().
+                AllowCookies().
                 Search(search).
                 OpenCalculator();
             cloudCalculator.ComputeEngine(engine).

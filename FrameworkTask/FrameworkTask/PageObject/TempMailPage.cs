@@ -8,9 +8,10 @@ namespace FrameworkTask
     {
         private string _url = "https://tempmail.plus";
         private WebDriver driver;
+        private By costLocator = By.XPath("//*[contains(text(), 'Estimated Monthly Cost:')]");
+
         private IWebElement RecievedEmail => driver.FindElement(By.ClassName("mail"));
         private IWebElement CopyEmailButton => driver.FindElement(By.Id("pre_copy"));
-        private By costLocator = By.XPath("//*[contains(text(), 'Estimated Monthly Cost:')]");
 
         public TempMailPage(WebDriver driver)
         {
@@ -39,6 +40,7 @@ namespace FrameworkTask
             driver.SwitchTo().Window(driver.WindowHandles[1]);
             wait.Until(ExpectedConditions.ElementExists(By.ClassName("mail"))).Click();
             RecievedEmail.Click();
+            driver.ExecuteScript("arguments[0].scrollIntoView(true);", RecievedEmail);
             return driver.FindElement(costLocator).Text;
         }
     }
