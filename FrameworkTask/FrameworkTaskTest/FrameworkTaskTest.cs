@@ -51,7 +51,8 @@ namespace FrameworkTaskTest
             {
                 Directory.CreateDirectory(Directory.GetCurrentDirectory() + "\\Screenshots");
                 Screenshot screenshot = _driver.GetScreenshot();
-                string fileName = DateTime.Now.ToString().Replace('.', '_').Replace(' ', '_').Replace(':', '_').Replace("\\", "_");
+                string fileName = DateTime.Now.ToString();
+                string.Format("{0:yyyy-MM-dd HH:mm:ss}", fileName);
                 screenshot.SaveAsFile($"{Directory.GetCurrentDirectory()}\\Screenshots\\{fileName}.jpg", ScreenshotImageFormat.Jpeg);
             }
             _driver.Quit();
