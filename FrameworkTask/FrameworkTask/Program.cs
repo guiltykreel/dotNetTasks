@@ -18,7 +18,7 @@ namespace FrameworkTask
             Engine engine = new EngineCreator().CreateNewEngine();
 
             googleCloud.openPage().
-                AllowCookies().
+                //AllowCookies().
                 Search(search).
                 OpenCalculator();
             cloudCalculator.ComputeEngine(engine).

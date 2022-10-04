@@ -10,7 +10,7 @@ namespace FrameworkTaskTestNUnit
         private WebDriver _driver;
 
         [SetUp]
-        public void Setup()=> _driver = new Driver().GetWebDriver();
+        public void Setup() => _driver = new Driver().GetWebDriver();
 
         [Test, Category("Smoke")]
         [TestCase("Google Cloud Platform Pricing Calculator")]
@@ -24,10 +24,11 @@ namespace FrameworkTaskTestNUnit
 
             //Act
             googleCloud.openPage().
+                AllowCookies().
                 Search(search).
                 OpenCalculator();
             cloudCalculator.ComputeEngine(engine).
-                AddToEstimate();
+               AddToEstimate();
             tempMail.OpenPage().
                 GetTempEmail();
             cloudCalculator.SendEstimateToEmail();
@@ -37,7 +38,7 @@ namespace FrameworkTaskTestNUnit
             //Assert
             Assert.IsTrue(cost.StartsWith(recievedCost));
         }
-
+    
         [TearDown]
         public void Teardown()
         {
