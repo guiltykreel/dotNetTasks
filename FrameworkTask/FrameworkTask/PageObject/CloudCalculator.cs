@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
+using OpenQA.Selenium.Interactions;
 
 namespace FrameworkTask
 {
@@ -9,7 +10,7 @@ namespace FrameworkTask
         private WebDriver driver;
         private WebDriverWait wait;
         private By EstimatedCostLocator = By.XPath("//*[@class='ng-binding' and contains(text(), 'Total Estimated Cost:')]");
-
+        
         private IWebElement AppFrame => driver.FindElement(By.XPath("//*[@id='cloud-site']/devsite-iframe/iframe"));
         private IWebElement CalculatorFrame => driver.FindElement(By.XPath("//*/iframe[@id='myFrame']"));
         private IWebElement ComputeEngineButton => driver.FindElement(By.XPath("//*[@class='name ng-binding' and contains(text(), 'Compute Engine')]"));
@@ -80,7 +81,7 @@ namespace FrameworkTask
             driver.SwitchTo().Frame(AppFrame);
             driver.SwitchTo().Frame(CalculatorFrame);
             EmailQuoteButton.Click();
-            EmailTexBox.SendKeys(Keys.Control + 'v');
+            EmailTexBox.SendKeys(Keys.Shift + Keys.Insert);
             driver.ExecuteScript("arguments[0].scrollIntoView(true);", EmailTexBox);
             wait.Until(ExpectedConditions.ElementToBeClickable(SendButton)).Click();
             driver.SwitchTo().Window(driver.WindowHandles[1]);
