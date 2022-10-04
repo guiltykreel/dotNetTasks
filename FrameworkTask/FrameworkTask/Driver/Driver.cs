@@ -25,7 +25,7 @@ namespace FrameworkTask
                         edgeOptions.AddArgument("--headless");
                         edgeOptions.AddArgument("--disable-dev-shm-usage");
                         edgeOptions.AddArgument("--allowed-ips");
-                        edgeOptions.AddArgument("--remote-debugging-port=<port>");
+                        edgeOptions.AddArgument("--remote-debugging-port=9222");
                         new DriverManager().SetUpDriver(new EdgeConfig());
                         driver = new EdgeDriver(edgeOptions);
                         break;
