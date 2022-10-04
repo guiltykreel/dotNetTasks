@@ -8,7 +8,8 @@ namespace FrameworkTask
     {
         public static void Main()
         {
-            Console.WriteLine(DateTime.Now.ToString().Replace('.', '_').Replace(' ', '_').Replace(':', '_'));
+            string fileName = DateTime.Now.ToString("'yyyy'-'MM'-'dd'T'HH':'mm':'ss'");
+            Console.WriteLine(fileName);
             Console.ReadKey();
             //Environment.SetEnvironmentVariable("Browser", "chrome");
             //Environment.SetEnvironmentVariable("env", "new");
