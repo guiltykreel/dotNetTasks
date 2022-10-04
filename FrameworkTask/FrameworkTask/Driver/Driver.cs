@@ -21,8 +21,11 @@ namespace FrameworkTask
                         driver = new ChromeDriver();
                         break;
                     default:
+                        EdgeOptions edgeOptions = new EdgeOptions();
+                        edgeOptions.AddArgument("--headless");
+                        edgeOptions.AddArgument("--disable-dev-shm-usage");
                         new DriverManager().SetUpDriver(new EdgeConfig());
-                        driver = new EdgeDriver();
+                        driver = new EdgeDriver(edgeOptions);
                         break;
                 }
             }
