@@ -24,6 +24,7 @@ namespace FrameworkTask
                         EdgeOptions edgeOptions = new EdgeOptions();
                         edgeOptions.AddArgument("--headless");
                         edgeOptions.AddArgument("--disable-dev-shm-usage");
+                        edgeOptions.AddArgument("--allowed-ips");
                         new DriverManager().SetUpDriver(new EdgeConfig());
                         driver = new EdgeDriver(edgeOptions);
                         break;
