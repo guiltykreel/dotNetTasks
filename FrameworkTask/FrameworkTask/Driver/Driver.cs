@@ -23,6 +23,7 @@ namespace FrameworkTask
                     default:
                         EdgeOptions edgeOptions = new EdgeOptions();
                         edgeOptions.AddArgument("test-type");
+                        edgeOptions.AddArgument("--no-sandbox");
                         new DriverManager().SetUpDriver(new EdgeConfig());
                         driver = new EdgeDriver(edgeOptions);
                         break;
