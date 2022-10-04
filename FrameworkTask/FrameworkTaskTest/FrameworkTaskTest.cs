@@ -17,32 +17,32 @@ namespace FrameworkTaskTest
         [TestInitialize]
         public void TestInitialize() => _driver = new Driver().GetWebDriver();
 
-        [TestMethod, TestCategory("All"), TestCategory("Smoke")]
-        [DataRow("Google Cloud Platform Pricing Calculator")]
-        public void CalculateEstimateCostTest(string search)
-        {
-            //Assert
-            GoogleCloud googleCloud = new GoogleCloud(_driver);
-            CloudCalculator cloudCalculator = new CloudCalculator(_driver);
-            TempMailPage tempMail = new TempMailPage(_driver);
-            Engine engine = new EngineCreator().CreateNewEngine();
+        //[TestMethod, TestCategory("All"), TestCategory("Smoke")]
+        //[DataRow("Google Cloud Platform Pricing Calculator")]
+        //public void CalculateEstimateCostTest(string search)
+        //{
+        //    //Assert
+        //    GoogleCloud googleCloud = new GoogleCloud(_driver);
+        //    CloudCalculator cloudCalculator = new CloudCalculator(_driver);
+        //    TempMailPage tempMail = new TempMailPage(_driver);
+        //    Engine engine = new EngineCreator().CreateNewEngine();
 
-            //Act
-            googleCloud.openPage().
-                //AllowCookies().
-                Search(search).
-                OpenCalculator();
-            cloudCalculator.ComputeEngine(engine).
-               AddToEstimate();
-            tempMail.OpenPage().
-                GetTempEmail();
-            cloudCalculator.SendEstimateToEmail();
-            string cost = cloudCalculator.GetCost().Remove(0, 22);
-            string recievedCost = tempMail.GetMailedCost().Remove(0, 24);
+        //    //Act
+        //    googleCloud.openPage().
+        //        //AllowCookies().
+        //        Search(search).
+        //        OpenCalculator();
+        //    cloudCalculator.ComputeEngine(engine).
+        //       AddToEstimate();
+        //    tempMail.OpenPage().
+        //        GetTempEmail();
+        //    cloudCalculator.SendEstimateToEmail();
+        //    string cost = cloudCalculator.GetCost().Remove(0, 22);
+        //    string recievedCost = tempMail.GetMailedCost().Remove(0, 24);
 
-            //Assert
-            Assert.IsTrue(cost.StartsWith(recievedCost));
-        }
+        //    //Assert
+        //    Assert.IsTrue(cost.StartsWith(recievedCost));
+        //}
 
         [TestMethod]
         public void TestShouldBeFailed()
