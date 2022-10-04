@@ -81,7 +81,7 @@ namespace FrameworkTask
             driver.SwitchTo().Frame(CalculatorFrame);
             EmailQuoteButton.Click();
             EmailTexBox.SendKeys(Keys.Control + 'v');
-            driver.ExecuteScript("arguments[0].scrollIntoView(true);", SendButton);
+            driver.ExecuteScript("arguments[0].scrollIntoView(true);", EmailTexBox);
             wait.Until(ExpectedConditions.ElementToBeClickable(SendButton)).Click();
             driver.SwitchTo().Window(driver.WindowHandles[1]);
             return this;
