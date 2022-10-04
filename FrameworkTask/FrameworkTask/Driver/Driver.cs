@@ -22,8 +22,7 @@ namespace FrameworkTask
                         break;
                     default:
                         EdgeOptions edgeOptions = new EdgeOptions();
-                        
-                        edgeOptions.AddArgument("--remote-debugging-port=9222");
+                        edgeOptions.AddArgument("test-type");
                         new DriverManager().SetUpDriver(new EdgeConfig());
                         driver = new EdgeDriver(edgeOptions);
                         break;
