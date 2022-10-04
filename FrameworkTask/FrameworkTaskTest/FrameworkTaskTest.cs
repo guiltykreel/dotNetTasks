@@ -7,11 +7,11 @@ namespace FrameworkTaskTest
         private static TestContext _testContext;
 
         public TestContext Context { get; set; }
-        
+
         [ClassInitialize]
-        public static void SetupClass(TestContext context) 
-        { 
-            _testContext = context; 
+        public static void SetupClass(TestContext context)
+        {
+            _testContext = context;
         }
 
         [TestInitialize]
@@ -42,6 +42,14 @@ namespace FrameworkTaskTest
 
             //Assert
             Assert.IsTrue(cost.StartsWith(recievedCost));
+        }
+
+        [TestMethod]
+        public void TestShouldBeFailed()
+        {
+            GoogleCloud googleCloud = new GoogleCloud(_driver);
+            googleCloud.openPage();
+            Assert.Fail();
         }
 
         [TestCleanup]
