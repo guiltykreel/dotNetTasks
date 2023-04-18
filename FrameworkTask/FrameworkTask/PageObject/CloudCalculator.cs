@@ -2,7 +2,8 @@
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using OpenQA.Selenium.Interactions;
-
+using SeleniumExtras.PageObjects;
+using SeleniumExtras.PageObjects.Core;
 namespace FrameworkTask
 {
     public class CloudCalculator
@@ -11,6 +12,10 @@ namespace FrameworkTask
         private WebDriverWait wait;
         private By EstimatedCostLocator = By.XPath("//*[@class='ng-binding' and contains(text(), 'Total Estimated Cost:')]");
         
+        [FindsBy(How = How.Id, Using = "asd")]
+        public IWebElement webElement { get; set; }
+
+
         private IWebElement AppFrame => driver.FindElement(By.XPath("//*[@id='cloud-site']/devsite-iframe/iframe"));
         private IWebElement CalculatorFrame => driver.FindElement(By.XPath("//*/iframe[@id='myFrame']"));
         private IWebElement ComputeEngineButton => driver.FindElement(By.XPath("//*[@class='name ng-binding' and contains(text(), 'Compute Engine')]"));
@@ -70,9 +75,11 @@ namespace FrameworkTask
 
         public CloudCalculator AddToEstimate()
         {
+            Page
             AddToEstimateButton.Click();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
             return this;
+            
         }
 
         public CloudCalculator SendEstimateToEmail()

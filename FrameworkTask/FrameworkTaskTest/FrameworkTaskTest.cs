@@ -39,7 +39,7 @@ namespace FrameworkTaskTest
             cloudCalculator.SendEstimateToEmail();
             string cost = cloudCalculator.GetCost().Remove(0, 22);
             string recievedCost = tempMail.GetMailedCost().Remove(0, 24);
-
+            
             //Assert
             Assert.IsTrue(cost.StartsWith(recievedCost));
         }
